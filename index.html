@@ -6,19 +6,26 @@
 </head>
 <body>
   <main>  
-  <div class="slideshow-container">
-      <div class="slide">
-        <img src="LOGO.jpg" alt="Image 1"width="360"height="480">
-      </div>
-      <div class="slide">
-        <img src="python.jpg" alt="Image 2"width="360"height="480">
-      </div>
-      <div class="slide">
-        <img src="img50.jpg" alt="Image 3"width="360"height="480">
-      </div>
-  </div>
-  <script src="script.js" ></script>
-      <a href="作业大全 自动出题系统 v2.0测试版.html">点击进入作业大全自动出题系统</a>
+    <div class="slideshow-container">
+        <div class="slide">
+          <img src="LOGO.jpg" alt="Image 1" width="360" height="480">
+        </div>
+        <div class="slide">
+          <img src="python.jpg" alt="Image 2" width="360" height="480">
+        </div>
+        <div class="slide">
+          <img src="img50.jpg" alt="Image 3" width="360" height="480">
+        </div>
+    </div>
+
+    <div class="horizontal-scroll">
+      <a href="#" class="scroll-item">Element 1</a>
+      <a href="#" class="scroll-item">Element 2</a>
+      <a href="#" class="scroll-item">Element 3</a>
+    </div>
+
+    <script src="script.js"></script>
+    <a href="作业大全 自动出题系统 v2.0测试版.html">点击进入作业大全自动出题系统</a>
   </main>
 </body>
 </html>
@@ -81,6 +88,28 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.horizontal-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.scroll-item {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #333;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.scroll-item:hover {
+  background-color: #333;
+  color: #fff;
 }
  
 footer {
