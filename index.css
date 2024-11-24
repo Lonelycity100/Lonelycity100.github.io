@@ -1,65 +1,60 @@
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #333;
-  color: #000;
+body {
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff; /* 修改为白色以便与背景形成对比 */
 }
 
 .slideshow-container {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
  
 .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
  
 .slide.active {
-  opacity: 1;
+    opacity: 1;
 }
  
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
- 
-
-
-.scrolling-item {
-        display:inline-block;
-        width: 200px;
-        height: 200px;
-        background-color:#FFFFFF;
-        margin: 5px;
-    }
 
 .scrolling-container {
-        width: 100%;
-        white-space: nowrap;
-        overflow-x: auto;
-    }
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+}
 
 .scrolling-item {
-        display:inline-block;
-        width: 200px;
-        height: 20px;
-        background-color:#FFFFFF;
-        margin: 5px;
-    }
+    display: inline-block;
+    width: 200px;
+    height: 200px; /* 将此处高度统一为200px */
+    background-color: #FFFFFF;
+    margin: 5px;
+}
 
 .card {
     border-radius: 8px;
     padding: 1em 1.5em;
-    box-shadow: 0.5px 0.5px 6px rgb(0, 0, 0, 0.1);
+    box-shadow: 0.5px 0.5px 6px rgba(0, 0, 0, 0.1);
     background-color: var(--content-background-color);
     overflow-wrap: break-word;
     transition: box-shadow 0.25s ease-in-out;
+}
