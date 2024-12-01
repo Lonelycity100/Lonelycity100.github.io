@@ -24,5 +24,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
  
   showSlide(currentSlide); // 显示第一张幻灯片
 });
- 
-</script>
