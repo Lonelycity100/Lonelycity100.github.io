@@ -6,7 +6,10 @@ body {
     text-align: center;
     padding: 20px;
     background-color: #333;
-    color: #fff; /* 修改为白色以便与背景形成对比 */
+    color: #fff; 
+    margin-top: -50px;
+    height: 50px;
+    z-index: 9999;
 }
 
 .slideshow-container {
