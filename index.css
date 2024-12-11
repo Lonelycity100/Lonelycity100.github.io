@@ -27,7 +27,6 @@ body {
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease;
-    object-fit: cover;
 }
  
 .slide.active {
