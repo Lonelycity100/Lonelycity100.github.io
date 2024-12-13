@@ -66,3 +66,4 @@ body {
     --content-background-color: #283593;
     background: linear-gradient(#1a237ecc, #283593cc);
     color: var(--content-color);
+}
