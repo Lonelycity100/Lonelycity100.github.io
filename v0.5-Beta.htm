@@ -1,0 +1,111 @@
+import random
+from fractions import Fraction
+from decimal import Decimal
+choose=int(input())
+mathods=['+','-','*','➗']
+def RandFra(momsmall,mombig,sonsmall,sonbig):
+    return Fraction(random.randint(momsmall,mombig),random.randint(sonsmall,sonbig))
+
+def ChrFra(Fra):
+     chrfra=Fra.split('分之')
+     return chrfra
+def RandPer():
+    if random.random() < 0.7:
+        return f"{random.randint(1, 100)}%"
+    else:
+        return '{:.1%}'.format(random.randint(1, 500) / 1000 * 2) 
+def gcd(Num1,Num2):
+    yin=1
+    for i in range(1,min(Num1,Num2)+1):
+        if Num1 % i == 0 and Num2%i == 0 and i>yin:
+            yin=i      
+    return yin
+if choose==2:
+    if random.randint(1,3)==1:
+        ratebig=random.randint(2,10)
+        prior=((random.randint(1,20)*ratebig))
+        subsequent=((random.randint(1,20)*ratebig))
+        rateint=str(prior)+':'+str(subsequent)
+        print(rateint)
+        ans=Decimal(prior)/Decimal(subsequent)
+        print(ans,'或',Fraction(ans).limit_denominator())
+    elif random.randint(1,2)==1:
+        ratesmall=random.randint(1,10)*2
+        prior=(round(random.randint(1,20)/ratesmall,2))
+        subsequent=(round(random.randint(1,20)/ratesmall,2))
+        ratefloat=str(prior)+':'+str(subsequent)
+        print(ratefloat)
+        ans=Decimal(prior)/Decimal(subsequent)
+        print(ans,'或',Fraction(ans).limit_denominator())
+    else:
+        ans=RandFra(1,20,1,6)
+        if str(ans)[-1]==1:
+            ans=ans.split('/')[0]
+        prior=RandFra(1,20,1,10)
+        subsequent=prior/ans
+        print(prior,':',subsequent)
+        print(ans)
+
+if choose==3:
+    if random.randint(1,3)==1:
+        ratebig=random.randint(2,10)
+        prior=((random.randint(1,20)*ratebig))
+        subsequent=((random.randint(1,20)*ratebig))
+        rateint=str(prior)+':'+str(subsequent)
+        print(rateint)
+        ans=str(int(prior/gcd(prior,subsequent)))+':'+str(int(subsequent/gcd(prior,subsequent)))
+        print(ans)
+    elif random.randint(1,2)==1:
+        ratesmall=random.randint(1,10)*2
+        prior=(round(random.randint(1,20)/ratesmall,2))
+        subsequent=(round(random.randint(1,20)/ratesmall,2))
+        ratefloat=str(prior)+':'+str(subsequent)
+        print(ratefloat)
+        ans=str(int(prior*100/gcd(int(prior*100),int(subsequent*100))))+':'+str(int(subsequent*100/gcd(int(prior*100),int(subsequent*100))))
+        print(ans)
+    else:
+        ans=RandFra(1,20,1,6)
+        if str(ans)[-1]==1:
+            ans=ans.split('/')[0]
+        prior=RandFra(1,20,1,10)
+        subsequent=prior/ans
+        print(prior,':',subsequent)
+        ans=str((prior/subsequent).numerator)+':'+str((prior/subsequent).denominator)
+        print(ans)
+if choose==4:
+    ans=RandFra(1,15,1,6)
+    per=RandPer()
+    print(per)
+    if '.' not in per:
+        mathod=random.choice(mathods[2:4])
+        print(mathod)
+        if mathod=='*':
+            per2=ans/Fraction(float(per[:-1]) / 100).limit_denominator()
+            print(per,mathod,per2)
+            print(ans)
+        if mathod=="➗":
+            per2=Fraction(float(per[:-1]) / 100).limit_denominator()/ans
+            print(per,mathod,per2)
+            print(ans)
+    else:
+        mathod=random.choice(mathods[0:2])
+        if mathod=='-':
+            if float(per[:-1])/100<ans:
+                per2=ans-float(per[:-1])/100
+                if len(str(per2))>=10:
+                    per2=Fraction(per2).limit_denominator()
+                print(ans,mathod,per)
+                print(per2)
+            else:
+                per2=float(per[:-1])/100-ans
+                if len(str(per2))>=10:
+                   per2=Fraction(per2).limit_denominator()
+                print(per,mathod,per2)
+                print(ans)
+            
+        if mathod=='+':
+            per2=ans-float(per[:-1])/100
+            if len(str(per2))>=10:
+                per2=Fraction(per2).limit_denominator()
+            print(per,mathod,per2)
+            print(ans)
