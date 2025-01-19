@@ -64,7 +64,7 @@ body {
 .color-card {
     --content-color: #fff;
     --content-background-color: #CCFFCC;
-    background: linear-gradient(#1a237ecc, #283593cc);
+    background: linear-gradient(#6c5ce7,#007bff);
     color: var(--content-color);
     border-radius: 8px;
     padding: 1em 1.5em;
