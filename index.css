@@ -26,7 +26,8 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 0.5s ease;
+    padding: 0; /* 移除可能的内边距 */
 }
  
 .slide.active {
@@ -36,7 +37,8 @@ body {
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* 保持完整比例 */
+    display: block;
 }
 
 .scrolling-container {
@@ -62,6 +64,8 @@ body {
     transition: box-shadow 0.25s ease-in-out;
 }
 .color-card {
+    height: 100%; /* 继承父容器高度 */
+    position: relative; /* 为内部元素创建定位上下文 */
     --content-color: #fff;
     --content-background-color: #CCFFCC;
     background: linear-gradient(#6c5ce7,#007bff);
