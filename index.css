@@ -11,15 +11,16 @@ body {
     height: 50px;
     z-index: 9999;
 }
-
 .slideshow-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 4/3; /* 按LOGO图比例设置 */
-    max-height: 70vh;  /* 防止过大 */
+    height: 60vh; /* 按视窗高度自适应 */
+    min-height: 400px; /* 最小高度保证 */
     overflow: hidden;
+    background: #f0f0f0; /* 备用背景色 */
 }
- 
+
+
 .slide {
     position: absolute;
     top: 0;
@@ -27,8 +28,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease;
-    padding: 0; /* 移除可能的内边距 */
+    transition: opacity 1s ease;
 }
  
 .slide.active {
@@ -38,9 +38,8 @@ body {
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 保持完整比例 */
-    background: #f0f0f0; /* 添加背景色填充空白区域 */
-    display: block;
+    object-fit: cover; /* 强制填充容器 */
+    object-position: center center; /* 始终居中显示 */
 }
 
 .scrolling-container {
